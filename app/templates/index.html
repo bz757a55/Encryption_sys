@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form id="encryptForm" action="{{ url_for('main.encrypt') }}" method="POST">
+    <label for="encryptText">Enter Text to Encrypt:</label>
+    <textarea id="encryptText" name="text" required></textarea>
+    <button type="submit">Encrypt</button>
+</form>
+<form id="decryptForm" action="{{ url_for('main.decrypt') }}" method="POST">
+    <label for="decryptText">Enter Text to Decrypt:</label>
+    <textarea id="decryptText" name="text" required></textarea>
+    <button type="submit">Decrypt</button>
+</form>
+<div id="resultContainer">
+    <h2 id="action"></h2>
+    <p id="result"></p>
+    <button class="copy-btn">Copy to Clipboard</button>
+</div>
+{% endblock %}
